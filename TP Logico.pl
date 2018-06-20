@@ -1,5 +1,5 @@
 
-/Base De Conocimiento /
+%Base De Conocimiento
 
 
 %pareja(Persona, Persona)
@@ -42,9 +42,9 @@ amigo ( vincent , jules ).
 amigo ( jules , jimmie ).
 amigo ( vincent , elVendedor ).
 
-/PARTE 1/
+% PARTE 1/
 
-/Punto 1/
+% Punto 1/
 
 saleCon(Quien, Cual):- 
    pareja(Quien,Cual).
@@ -53,12 +53,12 @@ saleCon(Quien,Cual):-
    pareja(Cual,Quien).
 
 
-/Punto 2/
+% Punto 2/
 
 pareja(bernardo,bianca).
 pareja(bernardo,charo).
 
-/Punto 3/
+% Punto 3/
 
 trabajaPara(Alguien,bernardo):-
   trabajaPara(marsellus,Alguien).
@@ -71,22 +71,23 @@ trabajaPara(Alguien,george):-
    
    
    
-/Punto 4/
+% Punto 4/
 
 esFiel(Personaje):-
- /con un forall pero no se bien como plantearlo, me confunde la aclaracion del not en el enunciado. /
+ 
+ %con un forall pero no se bien como plantearlo, me confunde la aclaracion del not en el enunciado. /
 
   
   
   
- /Punto 5/
-/Es con recursividad. /
+%Punto 5/
+%Es con recursividad. /
 
 
 
-/PARTE 2/
+% PARTE 2/
 
-/Punto1/
+%Punto1/
 
 esPeligroso(Personaje):-
    actividadPeligrosa(Personaje).
@@ -107,5 +108,5 @@ jefePeligroso(Personaje):-
    trabajaPara(Empleador,Personaje),
    esPeligroso(Empleador).
    
-/Por ahi funciona con recursividad/
+% Por ahi es con recursividad
 
