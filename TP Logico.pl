@@ -76,12 +76,13 @@ esFiel(Personaje):-
 
   
 %Punto 5/
-acataOrden(Empleador, Alguien):-
-	trabajaPara(Empleador, Alguien).
+acataOrden(Persona1,Persona2):-
+    trabajaPara(Persona1,Persona2).
+    
+acataOrden(Persona1,Persona2):-
+    trabajaPara(Persona1,Personita),
+    trabajaPara(Personita,Persona2).
 
-acataOrden(Empleador, Alguien):-
-	trabajaPara(Empleador, Empleado),
-	acataOrden(Empleado, Alguien).
 
 
 % PARTE 2/
