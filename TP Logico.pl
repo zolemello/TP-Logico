@@ -112,23 +112,30 @@ jefePeligroso(Personaje):-
 
 
 %Punto 2
-%No me muestra quien es esa persona como en el ejemplo, debe estar mal
+%Sigue estando mal, pero al menos ya es inversible. Sigo buscando los errores.
 
 sanCayetano(Persona):-
+   personaje(Persona,_),
   forall(tieneCerca(Persona, OtraPersona), encargo( Persona, OtraPersona , _ )),
+  personaje(OtraPersona,_),
   Persona\=OtraPersona.
-  
-tieneCerca(Persona, OtraPersona):-
-   amigo(Persona, OtraPersona).  
 
 tieneCerca(Persona, OtraPersona):-
-   amigo(OtraPersona,Persona).
-   
+   amigo(Persona, OtraPersona),
+   trabajaPara(OtraPersona, Persona).
+
 tieneCerca(Persona, OtraPersona):-
+   amigo(OtraPersona, Persona),
    trabajaPara(Persona, OtraPersona).
-   
+
 tieneCerca(Persona, OtraPersona):-
-   trabajaPara(OtraPersona,Persona).
+   amigo(Persona, OtraPersona),
+   trabajaPara(Persona, OtraPersona).
+
+tieneCerca(Persona, OtraPersona):-
+   amigo(OtraPersona, Persona),
+   trabajaPara(OtraPersona, Persona).
+
  
  
 %Punto 3
