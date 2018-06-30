@@ -76,12 +76,12 @@ esFiel(Personaje):-
 
   
 %Punto 5/
-acataOrden(Persona1,Persona2):-
-    trabajaPara(Persona1,Persona2).
+acataOrden(Empleador,Empleado):-
+    trabajaPara(Empleador,Empleado).
     
-acataOrden(Persona1,Persona2):-
-    trabajaPara(Persona1,Personita),
-    trabajaPara(Personita,Persona2).
+acataOrden(Empleador,Empleado2):-
+    trabajaPara(Empleador,Empleado1),
+    trabajaPara(Empleado1,Empleado2).
 
 
 
@@ -135,7 +135,7 @@ tieneCerca(Persona, OtraPersona):-
 %No estaria sabiendo como encatar el de actrices
 
 nivelRespeto(Personaje, 10):-
-    personaje(Personaje, mafioso(resuelveProblemas).
+    personaje(Personaje, mafioso(resuelveProblemas)).
 	
 nivelRespeto(Personaje, 20):-
     trabajaPara(Personaje, _).
