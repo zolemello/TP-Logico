@@ -70,12 +70,10 @@ trabajaPara(Alguien,george):-
    
 % Punto 4/
 
-%esFiel(Personaje):-
- 
- %con un forall pero no se bien como plantearlo, me confunde la aclaracion del not en el enunciado. /
+esFiel(Personaje):-
+	saleCon(Personaje, Persona1),
+	forall(saleCon(Personaje,Persona2), not(Persona1\=Persona2)).
 
-  
-  
   
 %Punto 5/
 %Es con recursividad. /
