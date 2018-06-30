@@ -4,6 +4,8 @@
 %pareja(Persona, Persona)
 pareja(marsellus,mia).
 pareja(pumkin,honeyBunny).
+pareja(bernardo,bianca).
+pareja(bernardo,charo).
 
 %trabajaPara(Empleador, Empleado)
 trabajaPara(marsellus,vincent).
@@ -45,21 +47,18 @@ amigo(vincent , elVendedor ).
 % Punto 1/
 
 saleCon(Quien, Cual):- 
-   pareja(Quien,Cual).
+   pareja(Quien, Cual).
    
 saleCon(Quien,Cual):-
    pareja(Cual,Quien).
 
 
-% Punto 2/
-
-pareja(bernardo,bianca).
-pareja(bernardo,charo).
 
 % Punto 3/
 
 trabajaPara(Alguien,bernardo):-
-  trabajaPara(marsellus,Alguien).
+  trabajaPara(marsellus,Alguien),
+  Alguien \=jules.
 
 trabajaPara(Alguien,george):-
    saleCon(bernardo,Alguien).
@@ -133,7 +132,7 @@ tieneCerca(Persona, OtraPersona):-
 %No estaria sabiendo como encatar el de actrices
 
 nivelRespeto(Personaje, 10):-
-    personaje(Personaje,mafioso(resuelveProblemas).
+    personaje(Personaje, mafioso(resuelveProblemas).
 	
 nivelRespeto(Personaje, 20):-
     trabajaPara(Personaje, _).
