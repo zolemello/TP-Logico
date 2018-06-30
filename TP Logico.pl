@@ -25,8 +25,7 @@ personaje(elVendedor,vender([humo,iphone])).
 personaje(jimmie,vender([auto])).
 
 % encargo ( Solicitante , Encargado , Tarea ).
-% las tareas pueden ser cuidar ( Protegido ), ayudar ( Ayudado ),
-buscar(Buscado,Lugar)
+% las tareas pueden ser cuidar ( Protegido ), ayudar ( Ayudado ), buscar(Buscado,Lugar)
 encargo(marsellus,vincent,cuidar(mia)).
 encargo(vincent,elVendedor,cuidar(mia)).
 encargo(marsellus,winston,ayudar(jules)).
@@ -66,7 +65,7 @@ trabajaPara(Alguien,george):-
    saleCon(bernardo,Alguien).
    
 trabajaPara(Alguien,george):-
-   saleCon(Alguen,bernardo).   
+   saleCon(Alguien,bernardo).   
    
    
    
