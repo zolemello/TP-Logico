@@ -1,4 +1,4 @@
-%Base De Conocimiento
+%Base De Conocimiento (trabajaPara en el punto 3 parte 1). 
 
 
 %pareja(Persona, Persona)
@@ -7,10 +7,6 @@ pareja(pumkin,honeyBunny).
 pareja(bernardo,bianca).
 pareja(bernardo,charo).
 
-%trabajaPara(Empleador, Empleado)
-trabajaPara(marsellus,vincent).
-trabajaPara(marsellus,jules).
-trabajaPara(marsellus,winston).
 
 % personaje(Nombre, Ocupacion)
 personaje(pumkin,ladron([estacionesDeServicio,licorerias])).
@@ -55,6 +51,10 @@ saleCon(Quien,Cual):-
 
 
 % Punto 3/
+%trabajaPara(Empleador, Empleado)
+trabajaPara(marsellus,vincent).
+trabajaPara(marsellus,jules).
+trabajaPara(marsellus,winston).
 
 trabajaPara(Alguien,bernardo):-
   trabajaPara(marsellus,Alguien),
