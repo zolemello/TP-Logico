@@ -83,7 +83,7 @@ acataOrden(Empleador,Empleado2):-
     trabajaPara(Empleador,Empleado1),
     trabajaPara(Empleado1,Empleado2).
 
-
+%Esta funcion no es recursiva ya que no se llama a si misma. 
 
 % PARTE 2/
 
