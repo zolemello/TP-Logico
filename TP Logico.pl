@@ -171,6 +171,11 @@ respetabilidad(Respetable,NoRespetable):-
 
 %Punto 5
 
+masAtareado(Quien):-
+   personaje(Quien,_),
+   cantidadEncargos(Quien,Cantidad),
+   forall(cantidadEncargos(_,CantidadEncargos),Cantidad>=CantidadEncargos).
+
 cantidadEncargos(Quien,Cantidad):-
    personaje(Quien,_),
    findall(Quien,encargo(_,Quien,_),Encargos),
