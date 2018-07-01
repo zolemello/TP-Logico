@@ -76,14 +76,15 @@ esFiel(Personaje):-
 
   
 %Punto 5/
-acataOrden(Empleador,Empleado):-
-    trabajaPara(Empleador,Empleado).
-    
-acataOrden(Empleador,Empleado2):-
-    trabajaPara(Empleador,Empleado1),
-    trabajaPara(Empleado1,Empleado2).
+-%Es con recursividad. 
+acataOrden(Empleador, Alguien):-  %caso base
+	trabajaPara(Empleador, Alguien). 
 
-%Esta funcion no es recursiva ya que no se llama a si misma. 
+acataOrden(Empleador, Alguien):-    %caso inductivo
+	trabajaPara(Empleador, Empleado), 
+	acataOrden(Empleado, Alguien).
+
+
 
 % PARTE 2/
 
