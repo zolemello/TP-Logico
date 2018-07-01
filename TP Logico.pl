@@ -117,24 +117,19 @@ jefePeligroso(Personaje):-
 
 sanCayetano(Persona):-
    personaje(Persona,_),
-  forall(tieneCerca(Persona, OtraPersona), encargo( Persona, OtraPersona , _ )),
-  personaje(OtraPersona,_),
-  Persona\=OtraPersona.
+   tieneCerca(Persona,_),
+  forall(tieneCerca(Persona, OtraPersona), encargo( Persona, OtraPersona , _ )).
 
 tieneCerca(Persona, OtraPersona):-
-   amigo(Persona, OtraPersona),
-   trabajaPara(OtraPersona, Persona).
+   amigo(Persona, OtraPersona).
 
 tieneCerca(Persona, OtraPersona):-
-   amigo(OtraPersona, Persona),
+   amigo(OtraPersona, Persona).
+
+tieneCerca(Persona, OtraPersona):-
    trabajaPara(Persona, OtraPersona).
 
 tieneCerca(Persona, OtraPersona):-
-   amigo(Persona, OtraPersona),
-   trabajaPara(Persona, OtraPersona).
-
-tieneCerca(Persona, OtraPersona):-
-   amigo(OtraPersona, Persona),
    trabajaPara(OtraPersona, Persona).
 
  
