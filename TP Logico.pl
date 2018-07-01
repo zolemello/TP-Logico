@@ -91,7 +91,7 @@ acataOrden(Empleador, Alguien):-    %caso inductivo
 %Punto1/
 
 esPeligroso(Personaje):-
-	personaje(Personaje, Actividad).
+	personaje(Personaje, Actividad),
 	actividadPeligrosa(Actividad).
    
 esPeligroso(Personaje):-
