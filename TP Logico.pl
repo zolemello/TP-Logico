@@ -99,7 +99,7 @@ esPeligroso(Personaje):-
   
 actividadPeligrosa(mafioso(maton)).
 
-actividadPeligrosa(Ladron(Locales)):-
+actividadPeligrosa(ladron(Locales)):-
 	member(licorerias, Locales).
     
 jefePeligroso(Personaje):-
@@ -132,7 +132,7 @@ tieneCerca(Persona, OtraPersona):-
 %Punto 3
 
 nivelRespeto(Personaje, Respeto):-
-    personaje(Personaje, Actriz(Peliculas)),
+    personaje(Personaje, actriz(Peliculas)),
 	length(Peliculas, Cantidad),
 	Respeto is Cantidad/10.
 
@@ -154,7 +154,12 @@ nivelRespeto(vincent, 15).
 
 %Punto 4
 
-
+esRespetable(Personaje):-
+	nivelRespeto(Personaje, Respeto),
+	Respeto > 9.
+respetabilidad(Respetables,_):-
+	findall(Personaje, esRespetable(Personaje), Personajes),
+	length(Personajes, Respetables).
 
 %Punto 5
 
