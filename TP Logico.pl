@@ -171,5 +171,9 @@ respetabilidad(Respetable,NoRespetable):-
 
 %Punto 5
 
+cantidadEncargos(Quien,Cantidad):-
+   personaje(Quien,_),
+   findall(Quien,encargo(_,Quien,_),Encargos),
+   length(Encargos,Cantidad).
 
 
