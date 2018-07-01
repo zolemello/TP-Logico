@@ -4,8 +4,8 @@
 %pareja(Persona, Persona)
 pareja(marsellus,mia).
 pareja(pumkin,honeyBunny).
-pareja(bernardo,bianca).
-pareja(bernardo,charo).
+pareja(bernardo,bianca). %Punto 2 parte 1
+pareja(bernardo,charo). %Punto 2 parte 1
 
 
 % personaje(Nombre, Ocupacion)
