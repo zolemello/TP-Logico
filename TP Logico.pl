@@ -76,7 +76,7 @@ esFiel(Personaje):-
 
   
 %Punto 5/
--%Es con recursividad. 
+-%Es recursivo ya que la funcion se llama a si misma.
 acataOrden(Empleador, Alguien):-  %caso base
 	trabajaPara(Empleador, Alguien). 
 
