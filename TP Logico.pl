@@ -108,7 +108,6 @@ jefePeligroso(Personaje):-
    
 
 %Punto 2
-%Sigue estando mal, pero al menos ya es inversible. Sigo buscando los errores.
 
 sanCayetano(Persona):-
    personaje(Persona,_),
