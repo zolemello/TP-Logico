@@ -153,12 +153,12 @@ esRespetable(Personaje):-
 noRespetable(Personaje):-
 	nivelRespeto(Personaje, Respeto),
 	Respeto < 9.
-respetabilidad(Respetables,_):-
-	findall(Personaje, esRespetable(Personaje), Personajes),
-	length(Personajes, Respetables).
-respetabilidad(_,NoRespetable):-
-	findall(Personaje, noRespetable(Personaje), Personajes),
-	length(Personajes, NoRespetable).
+	
+respetabilidad(Respetable,NoRespetable):-
+   findall(Personaje,personajeRespetable(Personaje),ListaPersonajes),
+   length(ListaPersonajes,Respetable),
+   findall(Personaje,personajeNoRespetable(Personaje),ListaPersonajesNoRespetables),
+   length(ListaPersonajesNoRespetables,NoRespetable).
 
 %Punto 5
 
