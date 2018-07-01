@@ -157,9 +157,15 @@ nivelRespeto(vincent, 15).
 esRespetable(Personaje):-
 	nivelRespeto(Personaje, Respeto),
 	Respeto > 9.
+noRespetable(Personaje):-
+	nivelRespeto(Personaje, Respeto),
+	Respeto < 9.
 respetabilidad(Respetables,_):-
 	findall(Personaje, esRespetable(Personaje), Personajes),
 	length(Personajes, Respetables).
+respetabilidad(_,NoRespetable):-
+	findall(Personaje, noRespetable(Personaje), Personajes),
+	length(Personajes, NoRespetable).
 
 %Punto 5
 
