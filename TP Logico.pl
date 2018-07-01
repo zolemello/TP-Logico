@@ -130,10 +130,10 @@ tieneCerca(Persona, OtraPersona):-
  
 %Punto 3
 
-nivelRespeto(Personaje, Respeto):-
-    personaje(Personaje, actriz(Peliculas)),
-	length(Peliculas, Cantidad),
-	Respeto is Cantidad/10.
+nivelRespeto(Personaje,Nivel):-
+   personaje(Personaje,actriz(Lista)),
+   length(Lista,Largo),
+   Nivel is Largo/10.
 
 nivelRespeto(Personaje, 10):-
     personaje(Personaje, mafioso(resuelveProblemas)).
@@ -141,15 +141,9 @@ nivelRespeto(Personaje, 10):-
 nivelRespeto(Personaje, 20):-
     personaje(Personaje, mafioso(capo)).
 	
-nivelRespeto(Personaje, 1):-
-    personaje(Personaje, mafioso(maton)).
-	
-nivelRespeto(Personaje, 0):-
-    personaje(Personaje, Actividad),
-	Actividad\=mafioso(_),
-	Actividad\=actriz(_).
-	
 nivelRespeto(vincent, 15).
+
+
 
 %Punto 4
 
