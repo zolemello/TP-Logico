@@ -89,22 +89,25 @@ acataOrden(Empleador, Alguien):-    %caso inductivo
 % PARTE 2/
 
 %Punto1/
-
 esPeligroso(Personaje):-
-	personaje(Personaje, Actividad),
-	actividadPeligrosa(Actividad).
-   
+   actividadPeligrosa(Personaje).
+
 esPeligroso(Personaje):-
   jefePeligroso(Personaje).
-  
-actividadPeligrosa(mafioso(maton)).
 
-actividadPeligrosa(ladron(Locales)):-
-	member(licorerias, Locales).
-    
+actividadPeligrosa(Personaje):-
+   personaje(Personaje,mafioso( maton )).
+
+actividadPeligrosa(Personaje):-
+ personaje(Personaje,ladron([ _, licorerias ])).
+
+actividadPeligrosa(Personaje):-
+ personaje(Personaje,ladron([licorerias, _])).
+
 jefePeligroso(Personaje):-
    trabajaPara(Empleador,Personaje),
    esPeligroso(Empleador).
+
    
 
 %Punto 2
