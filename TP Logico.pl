@@ -91,26 +91,21 @@ acataOrden(Empleador, Alguien):-    %caso inductivo
 %Punto1/
 
 esPeligroso(Personaje):-
-   actividadPeligrosa(Personaje).
+	personaje(Personaje, Actividad)
+   actividadPeligrosa(Actividad).
    
 esPeligroso(Personaje):-
   jefePeligroso(Personaje).
   
-actividadPeligrosa(Personaje):-
-   personaje(Personaje,mafioso( maton )).
+actividadPeligrosa(mafioso(maton)).
 
-actividadPeligrosa(Personaje):-
- personaje(Personaje,ladron([ _, licorerias ])).
+actividadPeligrosa(Ladron(Locales)):-
+	member(licorerias, Locales).
     
-actividadPeligrosa(Personaje):-
- personaje(Personaje,ladron([licorerias, _])).
- 
 jefePeligroso(Personaje):-
    trabajaPara(Empleador,Personaje),
    esPeligroso(Empleador).
    
-% Por ahi es con recursividad
-
 
 %Punto 2
 %Sigue estando mal, pero al menos ya es inversible. Sigo buscando los errores.
